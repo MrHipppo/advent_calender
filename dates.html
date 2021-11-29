@@ -1,0 +1,108 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="main.css">
+<script src="nicealerts.js"></script>
+<title>Nice Try!</title>
+</head>
+<body onload="checkdate()">
+<script>
+function checkdate(){
+	const d = new Date();
+	month = d.getMonth();
+	day = d.getDate();
+	param = window.location.search.split("=");
+	newPageTitle = 'Tür Nummer '+param[1];
+	document.title = newPageTitle;
+	if(month == 10)
+	{
+		if(day >= param[1])
+		{
+			switch(param[1]) {
+			  case "1":
+				document.location.href = "https://www.youtube.com/watch?v=aAkMkVFwAoo";
+				break;
+				case "2":
+				console.log(param[1]);
+				break;
+				case "3":
+				console.log(param[1]);
+				break;
+				case "4":
+				console.log(param[1]);
+				break;
+				case "5":
+				console.log(param[1]);
+				break;
+				case "6":
+				console.log(param[1]);
+				break;
+				case "7":
+				console.log(param[1]);
+				break;
+				case "8":
+				console.log(param[1]);
+				break;
+				case "9":
+				console.log(param[1]);
+				break;
+				case "10":
+				console.log(param[1]);
+				break;
+				case "11":
+				console.log(param[1]);
+				break;
+				case "12":
+				console.log(param[1]);
+				break;
+				case "13":
+				console.log(param[1]);
+				break;
+				case "14":
+				console.log(param[1]);
+				break;
+				case "15":
+				console.log(param[1]);
+				break;
+				case "16":
+				console.log(param[1]);
+				break;
+				case "17":
+				console.log(param[1]);
+				break;
+				case "18":
+				console.log(param[1]);
+				break;
+				case "19":
+				console.log(param[1]);
+				break;
+				case "20":
+				console.log(param[1]);
+				break;
+				case "21":
+				console.log(param[1]);
+				break;
+				case "22":
+				console.log(param[1]);
+				break;
+				case "23":
+				console.log(param[1]);
+				break;
+				case "24":
+				console.log(param[1]);
+				break;
+			  default:
+				drawAlert("nicht versuchen den Adventkalender kaputt zu machen!", "back");
+			} 
+		}
+		else{
+			drawAlert("Es ist noch zu früh, um dieses Türchen zu öffnen, sei nicht so neugierig!", "back");
+		}
+	}
+	else{
+		drawAlert("Du kannst diesen Adventkalender nur im Dezember aufmachen", "back");
+	}
+}
+</script>
+</body>
+</html> 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="main.css">
+<script src="nicealerts.js"></script>
+<title>Adventkalender für Karin</title>
+</head>
+<body onload="loaddoors()">
+<script>
+
+
+function loaddoors(){
+	i = 1;
+	const doors = [7,19,6,12,10,5,23,18,24,16,15,20,1,4,17,13,11,14,3,8,2,22,21,9,];
+	doors.forEach(createdoors);
+}
+function createdoors(number){
+	var button = document.createElement("button");
+	button.innerHTML = number;
+	button.id = number;
+	button.classList.add("door");
+	button.onclick = function(){check(this)};
+	var body = document.getElementsByTagName("body")[0];
+	body.appendChild(button);
+}
+function check(e) {
+	const d = new Date();
+	month = d.getMonth();
+	day = d.getDate();
+	if(month == 10)
+	{
+		if(day >= e.id)
+		{
+			document.location.href = "dates.html?day="+e.id;
+		}
+		else{
+			drawAlert("Es ist noch zu früh, um dieses Türchen zu öffnen, sei nicht so neugierig!", "NO");
+		}
+	}
+	else{
+		drawAlert("Du kannst diesen Adventkalender nur im Dezember aufmachen", "NO");
+	}
+}
+
+
+
+</script>
+</body>
+</html> 

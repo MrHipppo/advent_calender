@@ -1,0 +1,10 @@
+create for every day content
+for smartphone: hochformatbild
+load on my website
+buttons should be seen on background -> check
+
+evtl: 
+	better idea for my door function -> check
+	better door images
+	css for different bildschirmgrößen
+	door image animation
