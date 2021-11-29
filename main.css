@@ -133,11 +133,24 @@ code {
 
 }
 
-@media (max-width: 600px) 
+@media (max-width: 1000px) 
 {
   #alertBox {
 	position:relative;
 	width:90%;
-  top:30%;
+	top:30%;
+}
+#alertBox p {
+	font-size: 25px;
+}
+
+#alertBox h1 {
+	font-size: 27px;
+}
+
+#alertBox #closeBtn {
+	width:200px;
+}
+
 }
 
