@@ -30,10 +30,10 @@ function checkdate(){
 				document.getElementById("numberguess").style.display = "block";
 				break;
 				case "3":
-				console.log(param[1]);
+				drawAlert("Nachdem schweren Spiel von gestern ein bisschen eine Auflockerung heute, viel Spaß", "https://www.youtube.com/watch?v=eCLp7zodUiI")
 				break;
 				case "4":
-				console.log(param[1]);
+				dadjokes();
 				break;
 				case "5":
 				console.log(param[1]);
@@ -135,6 +135,28 @@ function guessNumber(){
 			}
 		}
 	}
+function dadjokes()
+{
+	const url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit";
+	fetch(url)
+.then(x => x.text())
+.then(y => displayjoke(y));
+}
+function displayjoke(joke)
+{
+	tmpjoke =  JSON.parse(joke);
+	if (tmpjoke.type == 'twopart') {
+		document.getElementById("setup").innerHTML = tmpjoke.setup;
+		document.getElementById("delivery").innerHTML = tmpjoke.delivery;
+	}
+	else if (tmpjoke.type == 'single'){
+		document.getElementById("setup").innerHTML = tmpjoke.joke;
+	}
+	else{
+		document.getElementById("setup").innerHTML = "Es gab einen Fehler, reloade die Seite und probier es neu";
+	}
+	document.getElementById("dadjokes").style.display = "block";
+}
 </script>
 </body>
 <div id="numberguess" style="display:none">
@@ -145,5 +167,10 @@ function guessNumber(){
 	<button class="guessfield" id="guessbutton" type="button" onclick="guessNumber()">Zahl Raten</button>
 	<h2 class="guess"> Anzahl der Versuche: </h2><p class="guess" id="guesses">0</p><br>
 	<h3 class="guess" id="higherlower"></h3>
+</div>
+
+<div id="dadjokes" style="display:none">
+	<h1 class="guess" id="setup"></h1>
+	<p class="guess" id="delivery"></p>
 </div>
 </html> 

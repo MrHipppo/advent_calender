@@ -1,12 +1,12 @@
-create for every day content
+create content for every day 
 for smartphone: hochformatbild ->check
 load on my website
 buttons should be seen on background -> check
 
 evtl: 
 	better idea for my door function -> check
-	better door images
 	css for different bildschirmgrößen -> besser wirds ned
+	better door images
 	door image animation
 Next features:
 	Doors remember if they where opened(maybe via cookie)
