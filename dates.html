@@ -139,8 +139,8 @@ function dadjokes()
 {
 	const url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit";
 	fetch(url)
-.then(x => x.text())
-.then(y => displayjoke(y));
+	.then(x => x.text())
+	.then(y => displayjoke(y));
 }
 function displayjoke(joke)
 {
