@@ -14,7 +14,7 @@ function checkdate(){
 	param = window.location.search.split("=");
 	newPageTitle = 'Tür Nummer '+param[1];
 	document.title = newPageTitle;
-	if(month == 11)
+	if(month == 10)
 	{
 		if(day >= param[1])
 		{
@@ -24,7 +24,10 @@ function checkdate(){
 				drawAlert("Als kleine einstimmung auf die Weihnachtszeit ist in Tag 1 ein Weihnachtslied drinnen.","https://www.youtube.com/watch?v=aAkMkVFwAoo")
 				break;
 				case "2":
-				console.log(param[1]);
+				randomNumber = Math.floor(Math.random() * 101);
+				hiddenfield = document.getElementById("RandomNumber");
+				hiddenfield.value = randomNumber;
+				document.getElementById("numberguess").style.display = "block";
 				break;
 				case "3":
 				console.log(param[1]);
@@ -104,6 +107,43 @@ function checkdate(){
 		drawAlert("Du kannst diesen Adventkalender nur im Dezember aufmachen", "back");
 	}
 }
+function guessNumber(){
+		rand = document.getElementById("RandomNumber").value;
+		guessedNumber = document.getElementById("guess").value;
+		guesses = document.getElementById("guesses").innerHTML;;
+		if(guessedNumber > 100 || guessedNumber < 0)
+		{
+			drawAlert("Die Zahlen gehen nur von 0 bis 100", "NO");
+		}
+		else{
+			if(guessedNumber > rand)
+			{
+				document.getElementById("higherlower").innerHTML = "Niedriger";
+				guesses ++;
+				document.getElementById("guesses").innerHTML = guesses;
+			}
+			else if(guessedNumber < rand)
+			{
+				document.getElementById("higherlower").innerHTML = "Höher";
+				guesses ++;
+				document.getElementById("guesses").innerHTML = guesses;
+			}
+			else if(guessedNumber == rand)
+			{
+				drawAlert("Die Zahl war "+rand+" und du hast nur "+guesses+" Versuche gebraucht, Gratulation!", "NO");
+				guesses ++;
+			}
+		}
+	}
 </script>
 </body>
+<div id="numberguess" style="display:none">
+	<h1 class="guess">Nummernraten</h1>
+	<input type="hidden" id="RandomNumber"></input>
+	<p class="guess">Ich (das System) habe mir eine Zufällige Nummer zwischen 1 und 100 überlegt, in dem Eingabefeld unten kannst du raten was für eine Nummer ich mir überlegt habe, und ich sage dir ob meine Nummer größer oder kleiner ist. Mal schauen wie viele Versuche du brauchst.</p>
+	<input class="guessfield" type="number" id="guess" placeholder="Nummer eingeben" min="0" max="100"><br>
+	<button class="guessfield" id="guessbutton" type="button" onclick="guessNumber()">Zahl Raten</button>
+	<h2 class="guess"> Anzahl der Versuche: </h2><p class="guess" id="guesses">0</p><br>
+	<h3 class="guess" id="higherlower"></h3>
+</div>
 </html> 
