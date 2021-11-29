@@ -1,9 +1,17 @@
-body {
-  background-image: url("pics/background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+@media only screen and (max-width: 1000px) {
+  body {
+    background-image: url("pics/background_small.jpg");
+	  background-repeat: no-repeat;
+	  background-size: cover;
+  }
 }
-
+@media only screen and (min-width: 1000px) {
+	body {
+	  background-image: url("pics/background.jpg");
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+}
 .door{
 	background-image: url('pics/door.png');
 	background-size: cover;
@@ -131,3 +139,4 @@ code {
 	width:90%;
   top:30%;
 }
+
