@@ -48,7 +48,7 @@ function checkdate(){
 				drawAlert("Das darf in keinem guten Onlineadventkalender fehlen, der was von sich hält, deswegen mal eine kleine Adventgeschichte.", "https://www.weihnachtswuensche.com/weihnachtsgeschichten/kurze-adventsgeschichte/")
 				break;
 				case "9":
-				console.log(param[1]);
+				document.getElementById("spotify").style.display = "block";
 				break;
 				case "10":
 				console.log(param[1]);
@@ -195,5 +195,13 @@ function showButton(hideID, showID)
          <button type="button" style="display:none" id="nicolofinal" class="nicolo" >Klick hier für einen Schokonikolo</button> 
 	 </a> 
 </div>
-
+<div id="spotify" style="display:none">
+	<h1 class="guess">Eine kleine Weihnachtsplaylist, die ich zusammengestellt habe</h1>
+	<iframe src="https://open.spotify.com/embed/playlist/6sOCN0x7RiqRlmjGsE2Tx9?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+	<br>
+	<br>
+	<button class="guessfield" id="guessbutton" onclick="window.location.href='https://open.spotify.com/playlist/6sOCN0x7RiqRlmjGsE2Tx9?si=4f9adecc12d54645';"> 
+      Link zur Playlist auf Spotify
+    </button>
+</div>
 </html> 
