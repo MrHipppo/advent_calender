@@ -51,7 +51,7 @@ function checkdate(){
 				document.getElementById("spotify").style.display = "block";
 				break;
 				case "10":
-				console.log(param[1]);
+				drawAlert("Ich glaube schon langsam wird es Zeit die Wohnung zu dekorieren, da sind ein paar Ideen", "https://www.thingiverse.com/mrhipppo/collections/christmas")
 				break;
 				case "11":
 				console.log(param[1]);
@@ -186,11 +186,17 @@ function showButton(hideID, showID)
 	 <img src="pics/Krukas_schrift.png" alt="Krukas" id="krukasImage"> 
 </div>
 <div id="nicolo" style="display:none">
-	<button type="button" style="display:block" id="nicolo1" class="nicolo" onclick="showButton('nicolo1','nicolo2')" >Klick hier für einen Schokonikolo</button>
-	<button type="button" style="display:none" id="nicolo2" class="nicolo" onclick="showButton('nicolo2','nicolo3')">Klick hier für einen Schokonikolo</button> 
-	<button type="button" style="display:none" id="nicolo3" class="nicolo" onclick="showButton('nicolo3','nicolo4')">Klick hier für einen Schokonikolo</button> 
-	<button type="button" style="display:none" id="nicolo4" class="nicolo" onclick="showButton('nicolo4','nicolo5')">Klick hier für einen Schokonikolo</button> 
-	<button type="button" style="display:none" id="nicolo5" class="nicolo" onclick="showButton('nicolo5','nicolofinal')">Klick hier für einen Schokonikolo</button> 
+	<button type="button" style="display:block" id="nicolo1" class="nicolo" onmouseover="showButton('nicolo1','nicolo2')" >Klick hier für einen Schokonikolo</button>
+	<button type="button" style="display:none" id="nicolo2" class="nicolo" onmouseover="showButton('nicolo2','nicolo3')">Klick hier für einen Schokonikolo</button>
+	<button type="button" style="display:none" id="nicolo3" class="nicolo" onmouseover="showButton('nicolo3','nicolo4')">Klick hier für einen Schokonikolo</button>
+	<button type="button" style="display:none" id="nicolo4" class="nicolo" onmouseover="showButton('nicolo4','nicolo5')">Klick hier für einen Schokonikolo</button>
+	<button type="button" style="display:none" id="nicolo5" class="nicolo" onmouseover="showButton('nicolo5','nicolo6')">Klick hier für einen Schokonikolo</button>
+	<button type="button" style="display:none" id="nicolo6" class="nicolo" onmouseover="showButton('nicolo6','nicolo7')">Klick hier für einen Schokonikolo</button>
+	<button type="button" style="display:none" id="nicolo7" class="nicolo" onmouseover="showButton('nicolo7','nicolo8')">Klick hier für einen Schokonikolo</button>
+	<button type="button" style="display:none" id="nicolo8" class="nicolo" onmouseover="showButton('nicolo8','nicolo9')">Klick hier für einen Schokonikolo</button>
+	<button type="button" style="display:none" id="nicolo9" class="nicolo" onmouseover="showButton('nicolo9','nicolo10')">Klick hier für einen Schokonikolo</button>
+	<button type="button" style="display:none" id="nicolo10" class="nicolo" onmouseover="showButton('nicolo10','nicolo11')">Klick hier für einen Schokonikolo</button>
+	<button type="button" style="display:none" id="nicolo11" class="nicolo" onclick="showButton('nicolo11','nicolofinal')">Klick hier für einen Schokonikolo</button> 
 	<a href="pics/Gutschein-Schokonikolo.pdf" download="Gutschein-Schokonikolo">
          <button type="button" style="display:none" id="nicolofinal" class="nicolo" >Klick hier für einen Schokonikolo</button> 
 	 </a> 
