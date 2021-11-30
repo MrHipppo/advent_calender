@@ -5,6 +5,10 @@
 	  background-size: cover;
 	  background-color: #d4d7dc;
   }
+  	#krukasImage{
+		width: 50%;
+		height: 20%;
+	}
 }
 @media only screen and (min-width: 1000px) {
 	body {
@@ -12,6 +16,9 @@
 	  background-repeat: no-repeat;
 	  background-size: cover;
 	}
+
+}
+	
 }
 .guess{
 	text-align: center;
@@ -21,6 +28,12 @@
 	margin-right: auto;
 	margin-left: auto;
 }
+#krukasImage{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 #guessbutton{
 	 background-color: #c4f9ff;
   border: none;

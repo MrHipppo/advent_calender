@@ -36,7 +36,7 @@ function checkdate(){
 				dadjokes();
 				break;
 				case "5":
-				console.log(param[1]);
+				document.getElementById("krukas").style.display = "block";
 				break;
 				case "6":
 				console.log(param[1]);
@@ -173,4 +173,8 @@ function displayjoke(joke)
 	<h1 class="guess" id="setup"></h1>
 	<p class="guess" id="delivery"></p>
 </div>
+<div id="krukas" style="display:none">
+	 <img src="pics/Krukas_schrift.png" alt="Krukas" id="krukasImage"> 
+</div>
+
 </html> 
