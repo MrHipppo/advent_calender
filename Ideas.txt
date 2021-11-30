@@ -3,7 +3,7 @@ create a spotify playlist -> done
 telegram bot??
 Funny Zeitschriftenquiz
 Video??
-Short story written by AI?
+Short story written by AI? -> done
 ebook/audiobook
 
 Funny Zeitschriftenquiz:
@@ -12,3 +12,4 @@ Welche Wurstart bist du?
 Welcher Grafikanschluss bist du?
 Welche Uhr bist du?
 Welche Schokolade bist du?
+Welche Klopapiermarke passt am besten zu dir?
