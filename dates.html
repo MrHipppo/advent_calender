@@ -39,13 +39,13 @@ function checkdate(){
 				document.getElementById("krukas").style.display = "block";
 				break;
 				case "6":
-				console.log(param[1]);
+				document.getElementById("nicolo").style.display = "block";
 				break;
 				case "7":
-				console.log(param[1]);
+				drawAlert("Wieder mal etwas Weihnachtliches zwischendurch, damit du nicht vergisst, worum es eigentlich geht.", "https://www.youtube.com/watch?v=N-PyWfVkjZc")
 				break;
 				case "8":
-				console.log(param[1]);
+				drawAlert("Das darf in keinem guten Onlineadventkalender fehlen, der was von sich hält, deswegen mal eine kleine Adventgeschichte.", "https://www.weihnachtswuensche.com/weihnachtsgeschichten/kurze-adventsgeschichte/")
 				break;
 				case "9":
 				console.log(param[1]);
@@ -115,6 +115,10 @@ function guessNumber(){
 		{
 			drawAlert("Die Zahlen gehen nur von 0 bis 100", "NO");
 		}
+		else if(guessedNumber == "")
+		{
+			drawAlert("Bitte gib eine Zahl ein", "NO");
+		}
 		else{
 			if(guessedNumber > rand)
 			{
@@ -157,6 +161,11 @@ function displayjoke(joke)
 	}
 	document.getElementById("dadjokes").style.display = "block";
 }
+function showButton(hideID, showID)
+{
+	document.getElementById(hideID).style.display = "none";
+	document.getElementById(showID).style.display = "block";
+}
 </script>
 </body>
 <div id="numberguess" style="display:none">
@@ -175,6 +184,16 @@ function displayjoke(joke)
 </div>
 <div id="krukas" style="display:none">
 	 <img src="pics/Krukas_schrift.png" alt="Krukas" id="krukasImage"> 
+</div>
+<div id="nicolo" style="display:none">
+	<button type="button" style="display:block" id="nicolo1" class="nicolo" onclick="showButton('nicolo1','nicolo2')" >Klick hier für einen Schokonikolo</button>
+	<button type="button" style="display:none" id="nicolo2" class="nicolo" onclick="showButton('nicolo2','nicolo3')">Klick hier für einen Schokonikolo</button> 
+	<button type="button" style="display:none" id="nicolo3" class="nicolo" onclick="showButton('nicolo3','nicolo4')">Klick hier für einen Schokonikolo</button> 
+	<button type="button" style="display:none" id="nicolo4" class="nicolo" onclick="showButton('nicolo4','nicolo5')">Klick hier für einen Schokonikolo</button> 
+	<button type="button" style="display:none" id="nicolo5" class="nicolo" onclick="showButton('nicolo5','nicolofinal')">Klick hier für einen Schokonikolo</button> 
+	<a href="pics/Gutschein-Schokonikolo.pdf" download="Gutschein-Schokonikolo">
+         <button type="button" style="display:none" id="nicolofinal" class="nicolo" >Klick hier für einen Schokonikolo</button> 
+	 </a> 
 </div>
 
 </html> 
