@@ -88,7 +88,9 @@ a:active { text-decoration: none; }
 	display: block;
 	font-size: 16px;
 }
-
+.movietext{
+	margin-left: 1em;
+}
 #nicolo2{
 	margin: 0;
 	position: absolute;

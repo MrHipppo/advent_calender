@@ -2,12 +2,14 @@ create a spotify playlist -> done
 Short story written by AI? -> done
 3D print file -> done
 Funny Zeitschriftenquiz -> done
-Liste mit Filmen und Links wo man sie findet
+Liste mit Filmen und Links wo man sie findet -> done
 Paint mit Bildupload und download
 telegram bot??
 Video??
 ebook/audiobook
 Wimmelbild
+
+
 
 Funny Zeitschriftenquiz:
 
