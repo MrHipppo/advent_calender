@@ -14,9 +14,10 @@ function checkdate(){
 	param = window.location.search.split("=");
 	newPageTitle = 'Tür Nummer '+param[1];
 	document.title = newPageTitle;
-	if(month == 10)
+	if(month == 11)
 	{
-		if(day >= param[1])
+		//if(day >= param[1])
+		if(true)
 		{
 			switch(param[1]) {
 			  case "1":
@@ -66,7 +67,7 @@ function checkdate(){
 				break;
 				//quiz
 				case "14":
-				console.log(param[1]);
+				document.getElementById("quiz").style.display = "block";
 				break;
 				case "15":
 				//Canvas paint
@@ -170,6 +171,17 @@ function showButton(hideID, showID)
 	document.getElementById(hideID).style.display = "none";
 	document.getElementById(showID).style.display = "block";
 }
+function FunnyQuiz(points, id)
+{
+	console.log(points);
+	console.log(id);
+	var pointscollected = document.getElementById("Points").innerHTML;
+	pointstmp = pointscollected + points;
+	document.getElementById("Points").innerHTML = pointstmp;
+	document.getElementById("question"+id).style.display = "none";
+	id ++;
+	document.getElementById("question"+id).style.display = "block";
+}
 </script>
 </body>
 <div id="numberguess" style="display:none">
@@ -254,5 +266,134 @@ Worang went out and turned to go away.
          <button type="button" class="nicolo" >Get the PDF Version here!</button> 
 	 </a> 
 </p>
+</div>
+
+<div id="quiz" style="display:none">
+	<input type="hidden" id="Points" value="0">
+	<div id="question1" style="display:block">
+		<div class="question">
+			<h1 class="questiontext">Du bist auf dem Schulhof und quatschst mit deiner BFF, als plötzlich der heißeste Boy aus eurer Schule vorbeikommt und dich anlächelt. Wie reagierst du? </h1>
+		</div>
+		<br>
+		<br>
+		<div class="answer">
+			<p class="answertext">Ich gehe zu ihm hin und stelle mich vor, immerhin bin ich die Checkerin am Schulhof, und er weiß das auch, sonst würde er mich nicht so ansehen.</p><br>
+			<button type="button" class="answerbutton" onclick("FunnyQuiz('7','1')")>Antwort</button>
+		</div>
+		<br>
+		<div class="answer">
+			<p class="answertext">OMG! Hat er mich gerade wirklich angelächelt. Ich kanns kaum erwarten meinen anderen BFFs davon zu erzählen! Ich kann schon richtig unsere Familie sehen, unsere Kinder werden so süß!</p><br>
+			<button type="button" class="answerbutton" onclick("FunnyQuiz('5','1')")>Antwort</button>
+		</div>
+		<br>
+		<div class="answer">
+			<p class="answertext">Pff, mir doch egal was der Looser macht. Sister vor Mister, zuerst rede ich mal mit meiner BFF fertig und dann schau ich weiter.</p><br>
+			<button type="button" class="answerbutton" onclick("FunnyQuiz('3','1')")>Antwort</button>
+		</div>
+		<br>
+		<div class="answer">
+			<p class="answertext">Der hat doch sicher meine BFF angelächelt, die schaut auch viel heißer aus als ich. Und sowieso, wieso sollte er mich überhaupt war nehmen?</p><br>
+			<button type="button" class="answerbutton" onclick("FunnyQuiz('0','1')")>Antwort</button>
+		</div>
+	</div>
+	
+	<div id="question2" style="display:none">
+		<div class="question">
+			<h1 class="questiontext">Urgh! Dein Chef versteht schon wieder überhaupt nicht, was hier abgeht. Du hast nur kurz einem Arbeitskollegen einen Witz erzählt, und schon ermahnt er dich, dass du arbeiten sollst, und nicht zum Scherzen bezahlt wirst. Wie reagierst du?</h1>
+		</div>
+		<br>
+		<br>
+		<div class="answer">
+			<p class="answertext">Tja, wer zahlt schafft an, und in diesem Fall bist das nicht du, also: Wieder an die Arbeit, und ab jetzt keine Witze mehr!</p><br>
+			<button type="button" class="answerbutton" onclick("FunnyQuiz('0','2')")>Antwort</button>
+		</div>
+		<br>
+		<div class="answer">
+			<p class="answertext">Wer ist dieser aufgeblasene Hund eigentlich, dass er sich einbildet dir so etwas vorzuschreiben, und außerdem brauchst du den Job ja sowieso nicht, dein Taschengeld ist eh genug, du gehst zu ihm und sagst ihm jetzt mal ordentlich deine Meinung, dass es Kracht!</p><br>
+			<button type="button" class="answerbutton" onclick("FunnyQuiz('7','2')")>Antwort</button>
+		</div>
+		<br>
+		<div class="answer">
+			<p class="answertext">Ein bisschen unfair findest du das jetzt schon, immerhin bist du der meinung, dass man beim Arbeiten viel Produktiver ist, wenn man auch einmal Spaß hat... Aber dann halt nach der Arbeitszeit.</p><br>
+			<button type="button" class="answerbutton" onclick("FunnyQuiz('5','2')")>Antwort</button>
+		</div>
+		<br>
+		<div class="answer">
+			<p class="answertext">Uff! Da warst du wohl zu unvorsichtig. Beim nächsten Mal musst du besser aufpassen ob dieser Spaßverderber in der Nähe ist, wenn du einen Witz erzählst.</p><br>
+			<button type="button" class="answerbutton" onclick("FunnyQuiz('3','2')")>Antwort</button>
+		</div>
+	</div>
+	<div id="question3" style="display:none">
+		<div class="question">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+	</div>
+	<div id="question4" style="display:none">
+		<div class="question">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+	</div>
+	<div id="question5" style="display:none">
+		<div class="question">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+	</div>
+	<div id="question6" style="display:none">
+		<div class="question">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+	</div>
+	<div id="question7" style="display:none">
+		<div class="question">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+	</div>
+	<div id="question8" style="display:none">
+		<div class="question">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+		<div class="answer">
+		</div>
+	</div>
 </div>
 </html> 
