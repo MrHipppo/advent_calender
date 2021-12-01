@@ -6,6 +6,8 @@
    <link rel="stylesheet" href="main.css">
 </head>
 <body>
+<h1 class="questiontext">Hier kannst du dich Kreativ austoben und auch deine Bilder danach runter Laden. Wenn du willst, kannst du auch den Krukas verzieren</h1>
+<img src="pics/Krukas.png" id="test" style="display:none">
 	<canvas id="DrawingCanvas" width="1000px" height="800px" style="border:1px solid #c3c3c3;">Your browser does not support the canvas element.</canvas><br>
 	<div id="colorToolbar" class="colorPicker">
 		<div id="red" class="colorPick" onclick="changeColor(this)" style="background:red; width:50px; height:50px;"></div><div style="clear: both;"></div>
@@ -24,8 +26,11 @@
 		<input type="range" min="1" max="100" value="2" onInput="drawWidth = this.value">
 		<button type="button" onclick="clearCanvas()" class="ColorButton">Alles Löschen</button><br>
 		<button type="button" onclick="clearCanvasToClear()" class="ColorButton">Durchsichtigen Hintergrund verwenden</button><br>
-		<button type="button" onclick="SaveCanvas()" class="ColorButton">Als Bild Speichern</button>
+		<button type="button" onclick="SaveCanvas()" class="ColorButton">Als Bild Speichern</button><br>
+		<button type="button" onclick="LoadBackground()" class="ColorButton">Krukas einfügen</button>
+		<!--<input type="file" id="myFile" multiple size="1" onchange="Upload()">-->
 	<br><br>
+
 	<div id="showImages">
 		<h1>Gespeicherte Bilder werden hier angezeigt</h1>
 	</div>
@@ -33,6 +38,8 @@
 	var canvas = document.getElementById("DrawingCanvas");
 	var ctx = canvas.getContext("2d");
 	var started = false;
+	
+	
 	let drawColor = "black";
 	ctx.fillStyle = "white";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -45,7 +52,6 @@
 		} 
 		document.getElementById(e.id).style.border = "1px dashed white";
 		drawColor = e.id;
-		console.log(drawColor);
 	}
 	canvas.addEventListener("mousedown", mouseDown, false);
 	canvas.addEventListener("mousemove", mouseXY, false);
@@ -118,6 +124,39 @@
 	function clearCanvasToClear(){
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 	}
+	function LoadBackground(){
+		img = document.getElementById("test");
+		ctx.drawImage(img, 0, 0, 1000, 750);
+	}
+function Upload(){
+	var x = document.getElementById("myFile");
+	var txt = "";
+	if ('files' in x) {
+		if (x.files.length == 0) {
+		txt = "Select one or more files.";
+		} else {
+		for (var i = 0; i < x.files.length; i++) {
+			txt += "<br><strong>" + (i+1) + ". file</strong><br>";
+			var file = x.files[i];
+			if ('name' in file) {
+			txt += "name: " + file.name + "<br>";
+			}
+			if ('size' in file) {
+			txt += "size: " + file.size + " bytes <br>";
+			}
+		}
+		}
+	} 
+	else {
+		if (x.value == "") {
+		txt += "Select one or more files.";
+		} else {
+		txt += "The files property is not supported by your browser!";
+		txt  += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
+		}
+	}
+}
+	
 </script>
 </body>
 </html> 

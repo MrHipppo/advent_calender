@@ -3,11 +3,12 @@ Short story written by AI? -> done
 3D print file -> done
 Funny Zeitschriftenquiz -> done
 Liste mit Filmen und Links wo man sie findet -> done
-Paint mit Bildupload und download
+Paint mit Bildupload und download -> done(außer upload-> geht ohne php ned)
+Wimmelbild
 telegram bot??
 Video??
 ebook/audiobook
-Wimmelbild
+
 
 
 
