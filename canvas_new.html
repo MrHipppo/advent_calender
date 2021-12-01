@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8" />
+   <title>Paint</title>
+   <link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<canvas id="DrawingCanvas" width="1000px" height="800px" style="border:1px solid #c3c3c3;">Your browser does not support the canvas element.</canvas><br>
+	<div id="colorToolbar" class="colorPicker">
+		<div id="red" class="colorPick" onclick="changeColor(this)" style="background:red; width:50px; height:50px;"></div><div style="clear: both;"></div>
+		<div id="pink" class="colorPick" onclick="changeColor(this)" style="background:pink; width:50px; height:50px;"></div><div style="clear: both;"></div>
+		<div id="fuchsia" class="colorPick" onclick="changeColor(this)" style="background:fuchsia; width:50px; height:50px;"></div><div style="clear: both;"></div>
+		<div id="orange" class="colorPick" onclick="changeColor(this)" style="background:orange; width:50px; height:50px;"></div><div style="clear: both;"></div>
+		<div id="yellow" class="colorPick" onclick="changeColor(this)" style="background:yellow; width:50px; height:50px;"></div><div style="clear: both;"></div>
+		<div id="lime" class="colorPick" onclick="changeColor(this)" style="background:lime; width:50px; height:50px;"></div><div style="clear: both;"></div>
+		<div id="green" class="colorPick" onclick="changeColor(this)" style="background:green; width:50px; height:50px;"></div><div style="clear: both;"></div>
+		<div id="blue" class="colorPick" onclick="changeColor(this)" style="background:blue; width:50px; height:50px;"></div><div style="clear: both;"></div>
+		<div id="purple" class="colorPick" onclick="changeColor(this)" style="background:purple; width:50px; height:50px;"></div><div style="clear: both;"></div>
+		<div id="black" class="colorPick" onclick="changeColor(this)" style="background:black; width:50px; height:50px; border: 1px dashed white"></div><div style="clear: both;"></div>
+		<div id="white" class="colorPick" onclick="changeColor(this)" style="background:white; width:50px; height:50px;"></div><div style="clear: both;"></div>
+		<input onInput="drawColor = this.value" type="color" class="color-picker" style="width:50px; height:50px;"> 
+	</div><br><br><br><br><br><br><br><br><br><br><br>
+		<input type="range" min="1" max="100" value="2" onInput="drawWidth = this.value">
+		<button type="button" onclick="clearCanvas()" class="ColorButton">Alles Löschen</button><br>
+		<button type="button" onclick="clearCanvasToClear()" class="ColorButton">Durchsichtigen Hintergrund verwenden</button><br>
+		<button type="button" onclick="SaveCanvas()" class="ColorButton">Als Bild Speichern</button>
+	<br><br>
+	<div id="showImages">
+		<h1>Gespeicherte Bilder werden hier angezeigt</h1>
+	</div>
+<script type="text/javascript">
+	var canvas = document.getElementById("DrawingCanvas");
+	var ctx = canvas.getContext("2d");
+	var started = false;
+	let drawColor = "black";
+	ctx.fillStyle = "white";
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+	let drawWidth = 2;
+	function changeColor(e)
+	{	
+		var x = document.getElementsByClassName("colorPick");
+		for (i = 0; i < x.length; i++) {
+		  x[i].style.border = "none";;
+		} 
+		document.getElementById(e.id).style.border = "1px dashed white";
+		drawColor = e.id;
+		console.log(drawColor);
+	}
+	canvas.addEventListener("mousedown", mouseDown, false);
+	canvas.addEventListener("mousemove", mouseXY, false);
+	canvas.addEventListener("touchstart", touchDown, false);
+	canvas.addEventListener("touchmove", touchXY, true);
+	canvas.addEventListener("touchend", touchUp, false);
+	document.body.addEventListener("mouseup", mouseUp, false);
+	document.body.addEventListener("touchcancel", touchUp, false);
+	mouseIsDown = 0;
+	function mouseUp() {
+		started = false
+		mouseIsDown = 0;
+		mouseXY();
+	}
+	function touchUp() {
+		started = false
+		mouseIsDown = 0;
+		showPos();
+	}
+	function mouseDown() {
+		mouseIsDown = 1;
+		mouseXY();
+	}
+	function touchDown() {
+		mouseIsDown = 1;
+		touchXY();
+	}
+	function mouseXY(e) {
+	if(mouseIsDown == 1)
+	{
+		if (!e)
+			var e = event;
+		canX = e.pageX - canvas.offsetLeft;
+		canY = e.pageY - canvas.offsetTop;
+		DrawLine();
+		}
+	}
+	function touchXY(e) {
+		if (!e)
+			var e = event;
+			e.preventDefault();
+		canX = e.targetTouches[0].pageX - canvas.offsetLeft;
+		canY = e.targetTouches[0].pageY - canvas.offsetTop;
+		DrawLine();
+	}
+	
+	function DrawLine(){
+		if (!started) {
+			started = true;
+			ctx.beginPath();
+			ctx.moveTo(canX, canY);		
+		}
+		
+		ctx.lineTo(canX, canY);
+		ctx.strokeStyle = drawColor;
+		ctx.lineWidth = drawWidth;
+		ctx.stroke();
+	}
+	function clearCanvas(){
+		ctx.fillStyle = "white";
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		ctx.fillRect(0, 0, canvas.width, canvas.height);
+	}
+	function SaveCanvas(){
+		var image = canvas.toDataURL("image/png", 1);
+		var img = document.createElement('img');
+		img.src = image;
+		document.getElementById('showImages').appendChild(img);
+	}
+	function clearCanvasToClear(){
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+	}
+</script>
+</body>
+</html> 

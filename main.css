@@ -76,6 +76,22 @@ a:active { text-decoration: none; }
 		border: solid black;
 		background-color: c4f9ff;
 }
+.colorPicker{
+	display: grid;
+	justify-content: space-evenly;
+	float: left;
+	grid-template-columns:  auto auto auto auto auto auto auto auto;
+}
+.ColorButton{
+	background-color: #4dedff;
+	border: none;
+	color: black;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	font-size: 16px;
+}
 .answerbutton{
 	margin-right: auto;
 	margin-left: auto;

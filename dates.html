@@ -16,8 +16,8 @@ function checkdate(){
 	document.title = newPageTitle;
 	if(month == 11)
 	{
-		//if(day >= param[1])
-		if(true)
+		if(day >= param[1])
+		//if(true)
 		{
 			switch(param[1]) {
 			  case "1":
@@ -71,11 +71,12 @@ function checkdate(){
 				document.getElementById("quiz").style.display = "block";
 				break;
 				case "15":
-				//Canvas paint
+				//video
 				console.log(param[1]);
 				break;
 				case "16":
-				console.log(param[1]);
+				//Canvas Paint
+				document.location.href = "canvas_new.html";
 				break;
 				case "17":
 				console.log(param[1]);
