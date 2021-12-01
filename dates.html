@@ -67,6 +67,7 @@ function checkdate(){
 				break;
 				//quiz
 				case "14":
+				document.getElementById("Points").value = 0;
 				document.getElementById("quiz").style.display = "block";
 				break;
 				case "15":
@@ -173,15 +174,53 @@ function showButton(hideID, showID)
 }
 function FunnyQuiz(points, id)
 {
-	console.log(points);
-	console.log(id);
-	var pointscollected = document.getElementById("Points").innerHTML;
-	pointstmp = pointscollected + points;
-	document.getElementById("Points").innerHTML = pointstmp;
-	document.getElementById("question"+id).style.display = "none";
-	id ++;
-	document.getElementById("question"+id).style.display = "block";
-}
+	var pointscollected = document.getElementById("Points").value;
+	pointstmp = Number(pointscollected) + Number(points);
+	console.log(pointstmp);
+	document.getElementById("Points").value = pointstmp;
+	if(id != 8)
+	{
+		document.getElementById("question"+id).style.display = "none";
+		id ++;
+		document.getElementById("question"+id).style.display = "block";
+	}
+	else{
+		document.getElementById("question"+id).style.display = "none";
+			if(pointstmp <= 7)
+			{
+				document.getElementById("solution1").style.display = "block";
+			}
+			else if(pointstmp <= 14)
+			{
+				document.getElementById("solution2").style.display = "block";
+			}
+			else if(pointstmp <= 21)
+			{
+				document.getElementById("solution3").style.display = "block";
+			}
+			else if(pointstmp <= 28)
+			{
+				document.getElementById("solution4").style.display = "block";
+			}
+			else if(pointstmp <= 35)
+			{
+				document.getElementById("solution5").style.display = "block";
+			}
+			else if(pointstmp <= 42)
+			{
+				document.getElementById("solution6").style.display = "block";
+			}
+			else if(pointstmp <= 49)
+			{
+				document.getElementById("solution7").style.display = "block";
+			}
+			else if(pointstmp <= 56)
+			{
+				document.getElementById("solution8").style.display = "block";
+			}
+		}
+	}
+
 </script>
 </body>
 <div id="numberguess" style="display:none">
@@ -278,22 +317,22 @@ Worang went out and turned to go away.
 		<br>
 		<div class="answer">
 			<p class="answertext">Ich gehe zu ihm hin und stelle mich vor, immerhin bin ich die Checkerin am Schulhof, und er weiß das auch, sonst würde er mich nicht so ansehen.</p><br>
-			<button type="button" class="answerbutton" onclick("FunnyQuiz('7','1')")>Antwort</button>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('7','1')">Antwort</button>
 		</div>
 		<br>
 		<div class="answer">
 			<p class="answertext">OMG! Hat er mich gerade wirklich angelächelt. Ich kanns kaum erwarten meinen anderen BFFs davon zu erzählen! Ich kann schon richtig unsere Familie sehen, unsere Kinder werden so süß!</p><br>
-			<button type="button" class="answerbutton" onclick("FunnyQuiz('5','1')")>Antwort</button>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('5','1')">Antwort</button>
 		</div>
 		<br>
 		<div class="answer">
 			<p class="answertext">Pff, mir doch egal was der Looser macht. Sister vor Mister, zuerst rede ich mal mit meiner BFF fertig und dann schau ich weiter.</p><br>
-			<button type="button" class="answerbutton" onclick("FunnyQuiz('3','1')")>Antwort</button>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('3','1')">Antwort</button>
 		</div>
 		<br>
 		<div class="answer">
 			<p class="answertext">Der hat doch sicher meine BFF angelächelt, die schaut auch viel heißer aus als ich. Und sowieso, wieso sollte er mich überhaupt war nehmen?</p><br>
-			<button type="button" class="answerbutton" onclick("FunnyQuiz('0','1')")>Antwort</button>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('0','1')">Antwort</button>
 		</div>
 	</div>
 	
@@ -305,95 +344,225 @@ Worang went out and turned to go away.
 		<br>
 		<div class="answer">
 			<p class="answertext">Tja, wer zahlt schafft an, und in diesem Fall bist das nicht du, also: Wieder an die Arbeit, und ab jetzt keine Witze mehr!</p><br>
-			<button type="button" class="answerbutton" onclick("FunnyQuiz('0','2')")>Antwort</button>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('0','2')">Antwort</button>
 		</div>
 		<br>
 		<div class="answer">
 			<p class="answertext">Wer ist dieser aufgeblasene Hund eigentlich, dass er sich einbildet dir so etwas vorzuschreiben, und außerdem brauchst du den Job ja sowieso nicht, dein Taschengeld ist eh genug, du gehst zu ihm und sagst ihm jetzt mal ordentlich deine Meinung, dass es Kracht!</p><br>
-			<button type="button" class="answerbutton" onclick("FunnyQuiz('7','2')")>Antwort</button>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('7','2')">Antwort</button>
 		</div>
 		<br>
 		<div class="answer">
 			<p class="answertext">Ein bisschen unfair findest du das jetzt schon, immerhin bist du der meinung, dass man beim Arbeiten viel Produktiver ist, wenn man auch einmal Spaß hat... Aber dann halt nach der Arbeitszeit.</p><br>
-			<button type="button" class="answerbutton" onclick("FunnyQuiz('5','2')")>Antwort</button>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('5','2')">Antwort</button>
 		</div>
 		<br>
 		<div class="answer">
 			<p class="answertext">Uff! Da warst du wohl zu unvorsichtig. Beim nächsten Mal musst du besser aufpassen ob dieser Spaßverderber in der Nähe ist, wenn du einen Witz erzählst.</p><br>
-			<button type="button" class="answerbutton" onclick("FunnyQuiz('3','2')")>Antwort</button>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('3','2')">Antwort</button>
 		</div>
 	</div>
+	
 	<div id="question3" style="display:none">
 		<div class="question">
+			<h1 class="questiontext">Wow! Du bist mitten in der Steinzeit und dein Partner ist gerade zur Jagd ausgezogen und du weißt nicht, wann er wieder zurückkommt. Dir ist unglaublich faad. Noch dazu hat deine Erzfeindin "Ugha" aus der Nachbarshöhle gerade ein rundes Ding erfunden, mit dem sie viel leichter Gegenstände Transportieren kann. Wie reagierst du?</h1>
 		</div>
+		<br>
+		<br>
 		<div class="answer">
+			<p class="answertext">Was fällt dieser zurückgebliebenen Neandertalerin eigentlich ein? Ich werde meinen größten Knüppel nehmen und sie und das runde Ding kurz und klein schlagen!</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('7','3')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Tja, damit ist Ugha wohl die beliebteste in der Umgebung. Dir bleibt wohl nichts anderes übrig, als klein beizugeben, und ihr zu Gratulieren. Sicher wird dein Partner nach der Jagd auch zu ihr gehen, nachdem sie so ein Genie ist. Hoffentlich findest du genug zu essen bevor die Kältezeit kommt, sonst sieht es schlecht aus.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('0','3')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Gefinkelt! Sobald der helle Ball am Himmel verschwunden ist, und niemand etwas sehen kann, schleichst du dich in Ugha's Höhle und stiehlst das runde Wunderding. Sobald dein Partner von der Jagd zurück ist, zeigst du ihm DEINE neue Erfindung. Der Winter ist gerettet!</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('5','3')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Igitt! Dir bleibt wohl nichts andere über, als zu Ugha zu gehen und eine Freundschafft vorzutäuschen, bis entweder du wieder beliebter wirst oder Ugha nicht mehr unter uns ist.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('3','3')">Antwort</button>
 		</div>
 	</div>
+	
 	<div id="question4" style="display:none">
 		<div class="question">
+			<h1 class="questiontext">Oh nein! Du hast dich soeben für neue Schuhe angestellt da der 5 Jahresplan endlich Schuhe für dich vorgesehen hat. Während du darüber sinnierst, wie herrlich es ist im Kommunismus zu leben, und alle Kapitalisten verfluchst, schnappt dir Olga von nebenan das letzte paar Schuhe in deiner Größe weg! Was tust du in dieser Situation?</h1>
 		</div>
+		<br>
+		<br>
 		<div class="answer">
+			<p class="answertext">Einfach! Die Frage ist einfach zu beantworten: Du zeigst Olga bei der Kommunistischen Partei an. Erzählst ihnen, dass Olga mit einem Kapitalisten verheiratet ist. Nachdem Olga dann weggeführt wird, schleichst du dich in ihr Haus, und nimmst dir die Schuhe, die laut Kommunismus sowieso euch allen gehören.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('7','4')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Das kommt vom Tagträumen. Zum Glück gibt es noch Schuhe die größer sind! Also, mit alten Zeitungen ausstopfen, damit sie passen, und hoffen, dass du in 5 Jahren dann Schuhe in deiner Größe findest.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('3','4')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Es bringt ja doch nichts, du bist einfach zu nichts zu gebrauchen. Geh schnell nach Hause, und hoffe, dass keinem Auffällt, dass du keine neuen Schuhe bekommen hast. Vielleicht kannst du die Löcher in den alten noch mit Zeitungspapier stopfen und mit Kohle anmalen.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('0','4')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Nicht mit mir! Du gehst noch im Geschäft zu Olga hin und verlangst, dass sie dir die Schuhe zurückgeben soll, die sie dir aus der Hand gerissen hat. Du hast viel zu hart gearbeitet und diese Schuhe verdient, du lässt sie dir sicher nicht mehr wegnehmen!</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('5','4')">Antwort</button>
 		</div>
 	</div>
+	
 	<div id="question5" style="display:none">
 		<div class="question">
+			<h1 class="questiontext">Peinlich! Dein Schwarm hat dich gefragt, ob du mit ihm auf den Abschlussball gehst. Yay!! Alles muss perfekt sein, damit er sich in dich verliebt. Du warst extra beim Friseur, und deine Mama hat dir sogar ein Professionelles Make-Up gezahlt. Das Kleid sitzt. Du siehst umwerfend aus. Dein Schwarm holt dich ab er schaut echt süß aus in seinem Anzug. Ach wenn er doch nur immer so herum gehen könnte... Hach! Ihr kommt am Ball an, und schon geht alles schief: Lisa aus der 12b hat genau das gleiche Kleid an, und das schlimmste, sie sieht noch viel besser darin aus als du! Was machst du?</h1>
 		</div>
+		<br>
+		<br>
 		<div class="answer">
+			<p class="answertext">Ganz klar! Dein Schwarm darf Lisa nicht zu Gesicht bekommen! Du verbringst den ganzen Abend also damit ihn unauffällig von einem Raum in den anderen zu schieben, immer wenn Lisa auch kommt. Was für ein anstrengender Abend.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('5','5')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Selbst ist die Frau! Lisa hat das absichtlich gemacht, du kennst ihre Gehässigkeit schon von Erzählungen und blicken die sie dir im Pausenhof zuwirft. Da hilft nur eines. Du bestellst dir ein Glas Orangensaft, und gehst rüber, um sie zu begrüßen. Während du auf sie zugehst, stolperst du und schüttest den Orangensaft über ihr Kleid! Vielleicht bekommst du im Fall auch noch ihr Kleid zu fassen, und kannst es abreißen. Der Abend ist gerettet!</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('7','5')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Was soll man machen, am besten du gehst rüber zu Lisa und stellst sie deinem Schwarm vor, damit er sie besser kennen lernen kann. Gegen sie hast du sowieso keine Chance.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('0','5')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Schnell raus hier! Du lehnst dich zu deinem Schwarm und meinst, dass der Ball "voll Lahm" ist und ihr so schnell wie möglich auf eine coolere Party gehen solltet. Wohin? Egal, Hauptsache weit weg von Lisa!</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('3','5')">Antwort</button>
 		</div>
 	</div>
+	
 	<div id="question6" style="display:none">
 		<div class="question">
+			<h1 class="questiontext">Auch das noch! Heute ist die coolste Party im ganzen Jahr, und du bist eingeladen! Yay! Du hast es geschafft, nach langen probieren, gehörst du jetzt zu den coolen Kids. Doch verdammt! Deine Eltern haben dir Hausarrest gegeben, weil du das letzte Mal viiel zu lange weg warst bei der letzten Party. Wenn du zu dieser Party nicht aufkreuzt, dann bist du wieder unten durch, und wirst es nie wieder schaffen cool zu sein. Dein Leben ist ruiniert! Was machst du?</h1>
 		</div>
+		<br>
+		<br>
 		<div class="answer">
+			<p class="answertext">Was soll man tun, du wirst wohl zum Mauerblümchen, und verbringst deine restliche Schulzeit allein in den Pausen. Wird schon gut gehen, ist ja nur die wichtigste Zeit deines Lebens.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('0','6')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Na und? Hausarrest hat dich noch nie aufgehalten! Du MUSST zu dieser Party. Der Plan ist folgender: Sobald deine Eltern schlafen, schleichst du dich aus dem Haus hinaus, und verbringst auf der Party die Zeit deines Lebens. Da deine Eltern lange schlafen, ist es ein leichtes für dich wieder zurückzukommen, bevor deine Eltern aufwachen. Endlich wirst du zu den coolen Kids gehören.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('7','6')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Irgendwie musst du deinen Eltern verständlich machen, dass das die wichtigste Nacht deines ganzen Lebens sein wird. Sie MÜSSEN das einfach verstehen. Zur Not bettelst du sie an, oder versuchst einen Deal auszuhandeln, indem du die Hausarbeit für die nächste Zeit machst.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('5','6')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Ohje! Ruf am besten gleich die Veranstalter an und erkläre ihnen die Situation, die werden es schon verstehen. Hoffentlich hast du beim nächsten Mal eine Chance auf der coolen Party dabei zu sein.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('3','6')">Antwort</button>
 		</div>
 	</div>
+	
 	<div id="question7" style="display:none">
-		<div class="question">
+				<div class="question">
+			<h1 class="questiontext">Das gibts doch nicht! Du bist Prinzessin auf einer Burg, die letzte Woche erfolgreich überfallen wurde. Alle deine Freundinnen wurden entführt, und sind jetzt verheiratet. Alle außer du! Das kann ja nicht sein, du hast dich extra Sexy gemacht. Du hast dein alljährliches Bad vorgezogen, extra viel Puder aufgetragen, und deine Flo freie Perücke aufgesetzt, und trotzdem wollte dich niemand entführen! Wie reagierst du?</h1>
 		</div>
+		<br>
+		<br>
 		<div class="answer">
+			<p class="answertext">Ihr Verlust, jetzt bist du wenigstens die beliebteste Jungfrau zu Hofe, den Antragsstellern wird gar nichts andere übrigbleiben als um dich zu werben. Dein Leben hat sich zum Guten gewendet.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('3','7')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Hach. Du bist es halt nicht wert. Keiner will dich heiraten. Du bist dazu verflucht eine alte verschrobene Jungfrau zu werden. Vielleicht solltest du schon mal anfangen ein paar Katzen zu adoptieren, wenigstens die laufen nicht weg.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('0','7')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Dir reicht es! Wenn dich keiner entführen will, dann machst du es eben selber. Selbst ist die Frau. Du steigst in die nächste Kutsche, und gehst in die nächste Räuberhöhle, die du findest, und sagst dem Räuberhauptmann, dass ihr jetzt verheiratet sei. Was die anderen können kannst du schon lange!</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('7','7')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Bist du wirklich so unbeliebt? Schaust du so hässlich aus? Du überlegst dir, zur Kräuterhexe zu gehen und einen Liebestrank oder einen Verzauberten Prinzen zu holen. Wenn es nicht freiwillig etwas wird, dann hilfst du eben nach.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('5','7')">Antwort</button>
 		</div>
 	</div>
+	
 	<div id="question8" style="display:none">
 		<div class="question">
+			<h1 class="questiontext">Uff! In einer Woche ist der Geburtstag deines Schwarmes, und wenn du willst, dass er dich bemerkt, musst du dich mit dem Geschenk ordentlich ins Zeug legen, sonst ist wird es nichts mit der zukünftigen Hochzeit, die du natürlich schon komplett fertig geplant hast. Was schenkst du ihm?</h1>
 		</div>
+		<br>
+		<br>
 		<div class="answer">
+			<p class="answertext">Irgendwas mit Fußball, oder Computerspielen, das mögen doch alle Burschen, in dem alter irgendwie. Da freut er sich bestimmt.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('3','8')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Ein romantisches Abendessen zu zweit unter Sternen. Du musst nur herausfinden, ob er Allergien hat oder ihm irgendetwas nicht schmeckt. Aber das findest du bestimmt, wenn du dich in seinen Facebook Account anmeldest, das Passwort ist sehr leicht herauszufinden gewesen, findest du sicher in seinen Nachrichten mit Freunden Hinweise darauf.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('7','8')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Gar nichts, es ist es bringt doch eh nichts. Er wird dich nie beachten, und du bist dazu verflucht für immer allein zu bleiben.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('0','8')">Antwort</button>
 		</div>
+		<br>
 		<div class="answer">
+			<p class="answertext">Wenn du mit seinen Freunden redest, und dich umhörst was ihm gefällt, findest du sicher ein paar gute Ideen was du ihm schenken kannst, das ihm auch gefallen wird.</p><br>
+			<button type="button" class="answerbutton" onclick="FunnyQuiz('5','8')">Antwort</button>
 		</div>
+	</div>
+	
+	<div id="solution1" class="answer" style="display:none">
+		<h1 class="questiontext">Ketchup</h1>
+		<p class="answertext">Der Klassiker, du darfst bei keinem Essen fehlen. Du bist der Grundstein der Soßenindustrie, ohne dich würde es die ganzen anderen Fancy soßen nicht geben. Du bist ruhig, gelassen, dich bringt so richtig gar nichts aus der Ruhe. Du bist jedoch auch ein bisschen unsicher, was dein Auftreten angeht, vor allem wenn andere Soßen in der Nähe sind. Lass dich nicht unterkriegen, ohne dich ist deine Clique nicht vollständig. Und jeder würde dich vermissen.</p><br>
+	</div>
+	
+	<div id="solution2" class="answer" style="display:none">
+		<h1 class="questiontext">Mayonnaise</h1>
+		<p class="answertext">Du bist nicht nur eine gute Soße, sondern auch eine Zutat für viele leckere Speisen. Du bist der Grundstein für viele Aktionen in deiner Clique, du planst alles und ladest die anderen Soßen zum Essen ein. Durch deine Zusammensetzung kannst du allerdings auch recht ungesund für die Clique sein. Versuche also dich auch ab und zu ein bisschen zurückzuhalten, damit du die Clique nicht zu ungesund machst.</p><br>
+	</div>
+	
+	<div id="solution3" class="answer" style="display:none">
+		<h1 class="questiontext">Knoblauch</h1>
+		<p class="answertext">Wenn es darum geht, essen besser schmecken zu lassen, bist du ein Profi. Keiner passt besser zu jedem Essen wie du. Deine Anpassungsfähigkeit lässt dich in allen Cliquen am Pausenhof beliebt sein, du brauchst dich also nicht entscheiden, jeder findet dich cool. Pass nur auf, dass deine BFF's dich nicht verstoßen, weil sie das Gefühl haben, dass sie dich nicht für sich alleine haben sondern mit jemanden teilen müssen. Zeige ihnen ab und zu wie wichtig sie dir sind.</p><br>
+	</div>
+	
+	<div id="solution4" class="answer" style="display:none">
+		<h1 class="questiontext">BBQ - Soße</h1>
+		<p class="answertext">Der Klassiker bei jeder Grillerei. Sobald dich deine Clique besser kennen lernt, wirst du auch zu anderen Speisen eingeladen, und versüßt ihnen so das Leben. Du bist sehr Facettenreich, von keiner anderen Soße gibt es mehr Varianten als von dir. Deine Clique wird sich eine Lieblingsseite von dir aussuchen, versuche die meiste Zeit diese Seite zu zeigen, aber schau auch, dass ihnen nicht langweilig mit dir wird, und ändere ab und zu deinen Geschmack ein wenig.</p><br>
+	</div>
+	
+	<div id="solution5" class="answer" style="display:none">
+		<h1 class="questiontext">Cocktail</h1>
+		<p class="answertext">Du bist die Mitte der Soßen, nicht zu exotisch, um einige Cliquen abzustoßen, aber auch nicht zu einfach um eine Clique abzulehnen. Du kannst dir also aussuchen zu welcher Clique du gehören willst. Wenn es dir in einer Clique nicht gefällt, kannst du dich jederzeit umentscheiden und Clique wechseln. Deine Freundinnen werden überrascht sein, zu welchen Speisen du überall dazu passt, und werden dich, sobald sie das herausgefunden haben, nie wieder vergessen auf den Tisch zu stellen.</p><br>
+	</div>
+	
+	<div id="solution6" class="answer" style="display:none">
+		<h1 class="questiontext">Curry</h1>
+		<p class="answertext">Schon langsam wirst du von der Exotischen Soße zur allerweltsoße die bei keinem Essen fehlen darf. Nicht zuletzt auch, weil du oft in Fast Food Restaurants zu finden bist. Hast du einmal eine Clique, wollen sie dich nie wieder loswerden, pass also auf mit wem du dich abgibst. Deine exotische Seite wird bei einigen nicht gut ankommen, aber sobald sie dich näher kennen, werden sie merken, dass du doch auch zu vielen Speisen passt.</p><br>
+	</div>
+	
+	<div id="solution7" class="answer" style="display:none">
+		<h1 class="questiontext">Spicy-Garlic</h1>
+		<p class="answertext">Du bist eine sehr exotische Soße die unter anderem auch ein bisschen scharf sein kann. Du bist nicht auf jedem Tisch zu finden, machst aber jedes Essen um einiges interessanter. Dein Selbstbewusstsein ist zwar groß, doch bist du auch bereit andere Meinungen zu akzeptieren. Such dir eine Clique, wo du mit deiner exotischen Art reinpasst, und du wirst merken, dass sie dich, sobald sie dich einmal kennen gelernt haben, zu jedem Essen dazu essen wollen.</p><br>
+	</div>
+	
+	<div id="solution8" class="answer" style="display:none">
+		<h1 class="questiontext">Chilisoße</h1>
+		<p class="answertext">Du bist feurig, und nicht für jedermann. Du machst jedes Essen zur Mutprobe. Dein Selbstbewusstsein ist so groß, dass du dir gar nichts sagen lässt, und das muss nicht immer das beste sein. Deine Clique wäre um einiges langweiliger ohne dich, doch pass auf, dass du nicht mit deiner Schärfe alle verscheuchst und am Ende keiner zu dir greift, wenn es darum geht Soßen auf seinen Teller zu geben. Du solltest eventuell auch manchmal mit der Schärfe ein wenig runter schalten, damit du deiner Clique behalten bleibst.</p><br>
 	</div>
 </div>
 </html> 

@@ -5,16 +5,18 @@
 	  background-size: cover;
 	  background-color: #d4d7dc;
 	}
-  	#krukasImage{
+	.question{
+		width: 100%
+	}
+	.answer{
+		width: 100%
+	}
+	#krukasImage{
 		width: 50%;
 		height: 20%;
 	}
-	.questiontext{
-		width: 100%
-	}
-	.answertext{
-		width: 100%
-	}
+	
+	
 }
 @media only screen and (min-width: 1000px) {
 	body {
@@ -22,12 +24,13 @@
 	  background-repeat: no-repeat;
 	  background-size: cover;
 	}
-	.questiontext{
+	.question{
 		width: 40%
 	}
-	.answertext{
+	.answer{
 		width: 40%
 	}
+
 }
 a:link { text-decoration: none; }
 
@@ -72,6 +75,18 @@ a:active { text-decoration: none; }
 		margin-left: auto;
 		border: solid black;
 		background-color: c4f9ff;
+}
+.answerbutton{
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #4dedff;
+	border: none;
+	color: black;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	font-size: 16px;
 }
 
 #nicolo2{
