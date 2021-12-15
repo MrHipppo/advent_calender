@@ -80,7 +80,11 @@ function checkdate(){
 				break;
 				case "17":
 				//Babytierfotos/videos
-				console.log(param[1]);
+				randomPicNumber = Math.floor(Math.random() * 42);
+				randomPic = './pics/animalbabies/'+randomPicNumber+'.jpg';
+				document.getElementById("img").src = randomPic;
+				console.log(randomPic);
+				document.getElementById("cuteAnimals").style.display = "block";
 				break;
 				case "18":
 				//video
@@ -120,37 +124,37 @@ function checkdate(){
 	}
 }
 function guessNumber(){
-		rand = document.getElementById("RandomNumber").value;
-		guessedNumber = document.getElementById("guess").value;
-		guesses = document.getElementById("guesses").innerHTML;
-		if(guessedNumber > 100 || guessedNumber < 0)
+	rand = document.getElementById("RandomNumber").value;
+	guessedNumber = document.getElementById("guess").value;
+	guesses = document.getElementById("guesses").innerHTML;
+	if(guessedNumber > 100 || guessedNumber < 0)
+	{
+		drawAlert("Die Zahlen gehen nur von 0 bis 100", "NO");
+	}
+	else if(guessedNumber == "")
+	{
+		drawAlert("Bitte gib eine Zahl ein", "NO");
+	}
+	else{
+		if(guessedNumber > rand)
 		{
-			drawAlert("Die Zahlen gehen nur von 0 bis 100", "NO");
+			document.getElementById("higherlower").innerHTML = "Niedriger";
+			guesses ++;
+			document.getElementById("guesses").innerHTML = guesses;
 		}
-		else if(guessedNumber == "")
+		else if(guessedNumber < rand)
 		{
-			drawAlert("Bitte gib eine Zahl ein", "NO");
+			document.getElementById("higherlower").innerHTML = "Höher";
+			guesses ++;
+			document.getElementById("guesses").innerHTML = guesses;
 		}
-		else{
-			if(guessedNumber > rand)
-			{
-				document.getElementById("higherlower").innerHTML = "Niedriger";
-				guesses ++;
-				document.getElementById("guesses").innerHTML = guesses;
-			}
-			else if(guessedNumber < rand)
-			{
-				document.getElementById("higherlower").innerHTML = "Höher";
-				guesses ++;
-				document.getElementById("guesses").innerHTML = guesses;
-			}
-			else if(guessedNumber == rand)
-			{
-				drawAlert("Die Zahl war "+rand+" und du hast nur "+guesses+" Versuche gebraucht, Gratulation!", "NO");
-				guesses ++;
-			}
+		else if(guessedNumber == rand)
+		{
+			drawAlert("Die Zahl war "+rand+" und du hast nur "+guesses+" Versuche gebraucht, Gratulation!", "NO");
+			guesses ++;
 		}
 	}
+}
 function dadjokes()
 {
 	const url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit";
@@ -192,41 +196,47 @@ function FunnyQuiz(points, id)
 	}
 	else{
 		document.getElementById("question"+id).style.display = "none";
-			if(pointstmp <= 7)
-			{
-				document.getElementById("solution1").style.display = "block";
-			}
-			else if(pointstmp <= 14)
-			{
-				document.getElementById("solution2").style.display = "block";
-			}
-			else if(pointstmp <= 21)
-			{
-				document.getElementById("solution3").style.display = "block";
-			}
-			else if(pointstmp <= 28)
-			{
-				document.getElementById("solution4").style.display = "block";
-			}
-			else if(pointstmp <= 35)
-			{
-				document.getElementById("solution5").style.display = "block";
-			}
-			else if(pointstmp <= 42)
-			{
-				document.getElementById("solution6").style.display = "block";
-			}
-			else if(pointstmp <= 49)
-			{
-				document.getElementById("solution7").style.display = "block";
-			}
-			else if(pointstmp <= 56)
-			{
-				document.getElementById("solution8").style.display = "block";
-			}
+		if(pointstmp <= 7)
+		{
+			document.getElementById("solution1").style.display = "block";
+		}
+		else if(pointstmp <= 14)
+		{
+			document.getElementById("solution2").style.display = "block";
+		}
+		else if(pointstmp <= 21)
+		{
+			document.getElementById("solution3").style.display = "block";
+		}
+		else if(pointstmp <= 28)
+		{
+			document.getElementById("solution4").style.display = "block";
+		}
+		else if(pointstmp <= 35)
+		{
+			document.getElementById("solution5").style.display = "block";
+		}
+		else if(pointstmp <= 42)
+		{
+			document.getElementById("solution6").style.display = "block";
+		}
+		else if(pointstmp <= 49)
+		{
+			document.getElementById("solution7").style.display = "block";
+		}
+		else if(pointstmp <= 56)
+		{
+			document.getElementById("solution8").style.display = "block";
 		}
 	}
-
+}
+function NextPicture()
+{
+	randomPicNumber = Math.floor(Math.random() * 42);
+	randomPic = './pics/animalbabies/'+randomPicNumber+'.jpg';
+	console.log(randomPic);
+	document.getElementById("img").src = randomPic;
+}
 </script>
 </body>
 <div id="numberguess" style="display:none">
@@ -576,22 +586,27 @@ Worang went out and turned to go away.
 	<div id="movies" class="answer">
 	<p class="movietext"> Wenn der Film auf Netflix oder Disney+ verfügbar ist, wird er verlinkt, sonst steht in Klammer dabei wie man zu ihm kommt</p>
 		<div id="movie">
-			<a href="https://www.disneyplus.com/movies/home-sweet-home-alone/316tLmyNEXs5" class="movietext">- Home alone<a> <br>
-			<a href="https://www.disneyplus.com/movies/high-school-musical-the-musical-the-holiday-special/77vM6dH7QRpf" class="movietext">- High school musicak - Holiday special<a> <br>
-			<a href="https://www.disneyplus.com/movies/the-santa-clause/3JPPheWC0SH5" class="movietext">- Santa Clause<a> <br>
-			<a href="https://www.disneyplus.com/movies/disneys-a-christmas-carol/QnakzyiFzOeP" class="movietext">- A Christman Carol<a> <br>
-			<a href="https://www.netflix.com/watch/80199682?trackId=13752289&tctx=0%2C2%2C9197ed8f36e9c7fd3f6752f4a8ab5ea3a40e720c%3A87c64990a9c89e8fb627335b9b41f3fc8ab8080e%2C9197ed8f36e9c7fd3f6752f4a8ab5ea3a40e720c%3A87c64990a9c89e8fb627335b9b41f3fc8ab8080e%2Cunknown%2C%2C" class="movietext">- The Christmas Chronicles<a> <br>
-			<a href="https://www.netflix.com/watch/60031255?trackId=13752289&tctx=0%2C29%2C9197ed8f36e9c7fd3f6752f4a8ab5ea3a40e720c%3A87c64990a9c89e8fb627335b9b41f3fc8ab8080e%2C9197ed8f36e9c7fd3f6752f4a8ab5ea3a40e720c%3A87c64990a9c89e8fb627335b9b41f3fc8ab8080e%2Cunknown%2C%2C" class="movietext">- Elf<a> <br>
-			<a href="https://www.netflix.com/watch/60000901?trackId=13752289&tctx=0%2C18%2C9197ed8f36e9c7fd3f6752f4a8ab5ea3a40e720c%3A87c64990a9c89e8fb627335b9b41f3fc8ab8080e%2C9197ed8f36e9c7fd3f6752f4a8ab5ea3a40e720c%3A87c64990a9c89e8fb627335b9b41f3fc8ab8080e%2Cunknown%2C%2C" class="movietext">- How the Grinch Stole Christmas<a> <br>
-			<a href="https://www.disneyplus.com/movies/die-hard/1NWCEanaAK2b" class="movietext">- Die Hard<a> <br>
-			<a href="https://www.disneyplus.com/movies/die-hard-with-a-vengeance/7PTXoHqR8mCE" class="movietext">- Die Hard -  With a vengeance<a> <br>
-			<a href="https://www.disneyplus.com/movies/a-good-day-to-die-hard/VZjwaJrZlPBz" class="movietext">- A good day to Die Hard<a> <br>
-			<a href="https://www.disneyplus.com/movies/live-free-or-die-hard/7221bCctvDNC" class="movietext">- Live Free or Die Hard<a> <br>
-			<a href="https://www.netflix.com/watch/81026181?trackId=259607612&tctx=0%2C0%2Cbce273b9-9f13-47ef-b00f-77060ff37946-297088938%2C75d30bf0-dc87-4b65-9ab8-9979cf8d0e9c_26839946X101XX1638434442950%2C75d30bf0-dc87-4b65-9ab8-9979cf8d0e9c_ROOT%2C%2C" class="movietext">- A Castle for Christmas<a> <br>
-			<a href="https://www.netflix.com/watch/70226288?trackId=13752289&tctx=0%2C0%2Cbfb472915d13721f105d000e45c29686f73b18f8%3A86ab624d188ae44b52e8e8000fc5fe44273e729e%2Cbfb472915d13721f105d000e45c29686f73b18f8%3A86ab624d188ae44b52e8e8000fc5fe44273e729e%2Cunknown%2C%2C" class="movietext">- The Hobbit(Es kommen Elfen vor -> Weihnachtsfilm)<a> <br>
-			<a href="#" class="movietext">- Lord of the rings Trilogy (Filmverleih Lukas Dietrich)(Es kommen Elfen vor -> Weihnachtsfilm)<a> <br>
+			<a href="https://www.disneyplus.com/movies/home-sweet-home-alone/316tLmyNEXs5" class="movietext">- Home alone</a> <br>
+			<a href="https://www.disneyplus.com/movies/high-school-musical-the-musical-the-holiday-special/77vM6dH7QRpf" class="movietext">- High school musicak - Holiday special</a>  <br>
+			<a href="https://www.disneyplus.com/movies/the-santa-clause/3JPPheWC0SH5" class="movietext">- Santa Clause</a>  <br>
+			<a href="https://www.disneyplus.com/movies/disneys-a-christmas-carol/QnakzyiFzOeP" class="movietext">- A Christman Carol</a>  <br>
+			<a href="https://www.netflix.com/watch/80199682?trackId=13752289&tctx=0%2C2%2C9197ed8f36e9c7fd3f6752f4a8ab5ea3a40e720c%3A87c64990a9c89e8fb627335b9b41f3fc8ab8080e%2C9197ed8f36e9c7fd3f6752f4a8ab5ea3a40e720c%3A87c64990a9c89e8fb627335b9b41f3fc8ab8080e%2Cunknown%2C%2C" class="movietext">- The Christmas Chronicles</a> <br>
+			<a href="https://www.netflix.com/watch/60031255?trackId=13752289&tctx=0%2C29%2C9197ed8f36e9c7fd3f6752f4a8ab5ea3a40e720c%3A87c64990a9c89e8fb627335b9b41f3fc8ab8080e%2C9197ed8f36e9c7fd3f6752f4a8ab5ea3a40e720c%3A87c64990a9c89e8fb627335b9b41f3fc8ab8080e%2Cunknown%2C%2C" class="movietext">- Elf</a> <br>
+			<a href="https://www.netflix.com/watch/60000901?trackId=13752289&tctx=0%2C18%2C9197ed8f36e9c7fd3f6752f4a8ab5ea3a40e720c%3A87c64990a9c89e8fb627335b9b41f3fc8ab8080e%2C9197ed8f36e9c7fd3f6752f4a8ab5ea3a40e720c%3A87c64990a9c89e8fb627335b9b41f3fc8ab8080e%2Cunknown%2C%2C" class="movietext">- How the Grinch Stole Christmas</a>  <br>
+			<a href="https://www.disneyplus.com/movies/die-hard/1NWCEanaAK2b" class="movietext">- Die Hard</a>  <br>
+			<a href="https://www.disneyplus.com/movies/die-hard-with-a-vengeance/7PTXoHqR8mCE" class="movietext">- Die Hard -  With a vengeance</a>  <br>
+			<a href="https://www.disneyplus.com/movies/a-good-day-to-die-hard/VZjwaJrZlPBz" class="movietext">- A good day to Die Hard</a> <br>
+			<a href="https://www.disneyplus.com/movies/live-free-or-die-hard/7221bCctvDNC" class="movietext">- Live Free or Die Hard</a>  <br>
+			<a href="https://www.netflix.com/watch/81026181?trackId=259607612&tctx=0%2C0%2Cbce273b9-9f13-47ef-b00f-77060ff37946-297088938%2C75d30bf0-dc87-4b65-9ab8-9979cf8d0e9c_26839946X101XX1638434442950%2C75d30bf0-dc87-4b65-9ab8-9979cf8d0e9c_ROOT%2C%2C" class="movietext">- A Castle for Christmas</a>  <br>
+			<a href="https://www.netflix.com/watch/70226288?trackId=13752289&tctx=0%2C0%2Cbfb472915d13721f105d000e45c29686f73b18f8%3A86ab624d188ae44b52e8e8000fc5fe44273e729e%2Cbfb472915d13721f105d000e45c29686f73b18f8%3A86ab624d188ae44b52e8e8000fc5fe44273e729e%2Cunknown%2C%2C" class="movietext">- The Hobbit(Es kommen Elfen vor -> Weihnachtsfilm)</a>  <br>
+			<a href="#" class="movietext">- Lord of the rings Trilogy (Filmverleih Lukas Dietrich)(Es kommen Elfen vor -> Weihnachtsfilm)</a>  <br>
 			<br>
 		</div>
 	</div>
+</div>
+<div id="cuteAnimals" style="display:none">
+	<h1 class="questiontext">Damit die Wartezeit noch schneller vorbei geht, sind hier ein paar Tierbilder</h1>
+	<img id="img" class="AnimalPicture" src="">
+	<button type="button" class="answerbutton" onclick="NextPicture()">Zufälliges Bild</button>
 </div>
 </html> 

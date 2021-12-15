@@ -40,6 +40,14 @@ a:hover { text-decoration: none; }
 
 a:active { text-decoration: none; }
 
+.AnimalPicture{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	width: 50%;
+	height: auto;
+}
+
 .guessfield{
 	display: block;
 	margin-right: auto;
