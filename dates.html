@@ -20,7 +20,7 @@ function checkdate(){
 		//if(true)
 		{
 			switch(param[1]) {
-			  case "1":
+			  case "100":
 			  //bsp befüllung
 				drawAlert("Als kleine einstimmung auf die Weihnachtszeit ist in Tag 1 ein Weihnachtslied drinnen.","https://www.youtube.com/watch?v=aAkMkVFwAoo")
 				break;
@@ -89,9 +89,8 @@ function checkdate(){
 				//video
 				drawAlert("Diese Weihnachtsbeleuchtungen werden auch immer ärger.", "https://www.youtube.com/watch?v=9--136vqHQI");
 				break;
-				case "19":
-				//wimmelbilder
-				console.log(param[1]);
+				case "1":
+				document.location.href = "./connect4/minimax/index.html";
 				break;
 				case "20":
 				//video
@@ -101,14 +100,19 @@ function checkdate(){
 				console.log(param[1]);
 				break;
 				case "22":
+				//video
 				console.log(param[1]);
 				break;
 				case "23":
+				drawAlert("Wenn du bis jetzt noch nicht alle Geschenke hast, hast du hier ein paar Last Minute Geschenkbastelideen (Probieren auf eigene Gefahr, ich habe sie nicht probiert).", "https://trytrytry.de/2018/12/sos-diy-geschenke/");
 				console.log(param[1]);
 				break;
 				case "24":
 				//Kiste meme
 				document.getElementById("Christmas").style.display = "block";
+				break;
+				case "25":
+				drawAlert("Wie bist du denn hier hin gekommen? Der Advent ist vorbei, es sind nur 24 Tage. Schau das du wieder weg kommst!", "back");
 				break;
 			  default:
 				drawAlert("nicht versuchen den Adventkalender kaputt zu machen!", "back");
