@@ -83,7 +83,6 @@ function checkdate(){
 				randomPicNumber = Math.floor(Math.random() * 42);
 				randomPic = './pics/animalbabies/'+randomPicNumber+'.jpg';
 				document.getElementById("img").src = randomPic;
-				console.log(randomPic);
 				document.getElementById("cuteAnimals").style.display = "block";
 				break;
 				case "18":
@@ -109,7 +108,7 @@ function checkdate(){
 				break;
 				case "24":
 				//Kiste meme
-				console.log(param[1]);
+				document.getElementById("Christmas").style.display = "block";
 				break;
 			  default:
 				drawAlert("nicht versuchen den Adventkalender kaputt zu machen!", "back");
@@ -234,7 +233,6 @@ function NextPicture()
 {
 	randomPicNumber = Math.floor(Math.random() * 42);
 	randomPic = './pics/animalbabies/'+randomPicNumber+'.jpg';
-	console.log(randomPic);
 	document.getElementById("img").src = randomPic;
 }
 </script>
@@ -609,4 +607,9 @@ Worang went out and turned to go away.
 	<img id="img" class="AnimalPicture" src="">
 	<button type="button" class="answerbutton" onclick="NextPicture()">Zufälliges Bild</button>
 </div>
+<div id="Christmas" style="display:none">
+	<h1 class="questiontext">Frohe Weihnachten</h1>
+	<img id="img" class="AnimalPicture" src="./pics/Box.jpg">
+</div>
+
 </html> 
